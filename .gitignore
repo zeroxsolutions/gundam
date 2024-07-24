@@ -1,0 +1,12 @@
+# ide
+.vscode/
+.idea/
+
+# node
+node_modules/
+
+# misc
+.DS_Store
+
+# out
+dist/
