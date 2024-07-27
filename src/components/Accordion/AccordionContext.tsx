@@ -20,7 +20,7 @@ export type AccordionContextProviderProps = {
   children: React.ReactNode;
 };
 
-export function useAccordion(): AccordionContextType | null {
+export function useAccordion(): AccordionContextType {
   const context = React.useContext<AccordionContextType | null>(
     AccordionContext
   );
@@ -30,10 +30,9 @@ export function useAccordion(): AccordionContextType | null {
   return context;
 }
 
-export const AccordionContextProvider: React.FC<AccordionContextProviderProps> = ({
-  value,
-  children,
-}: AccordionContextProviderProps): React.ReactNode => {
+export const AccordionContextProvider: React.FC<
+  AccordionContextProviderProps
+> = ({ value, children }: AccordionContextProviderProps): React.ReactNode => {
   return (
     <AccordionContext.Provider value={value}>
       {children}

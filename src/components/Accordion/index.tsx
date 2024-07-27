@@ -1,4 +1,5 @@
 import {
+  propTypesDisabled,
   propTypesIcon,
   propTypesOpen,
   type typeDisabled,
@@ -11,6 +12,8 @@ import {
   AccordionContextType,
 } from "./AccordionContext";
 import { defaultProps } from "@/default/components/accordion";
+import { AccordionBody, AccordionBodyProps } from "./AccordionBody";
+import { AccordionHeader, AccordionHeaderProps } from "./AccordionHeader";
 
 export interface AccordionProps extends React.ComponentProps<"div"> {
   open?: typeOpen;
@@ -22,7 +25,7 @@ export const Accordion: React.ForwardRefExoticComponent<
   React.PropsWithoutRef<AccordionProps> & React.RefAttributes<HTMLDivElement>
 > = React.forwardRef<HTMLDivElement, AccordionProps>(
   (
-    { open, icon, disabled, ...props }: AccordionProps,
+    { open, icon, disabled, ...restProps }: AccordionProps,
     ref: React.ForwardedRef<HTMLDivElement>
   ): React.ReactNode => {
     // assign
@@ -37,8 +40,8 @@ export const Accordion: React.ForwardRefExoticComponent<
 
     return (
       <AccordionContextProvider value={contextValue}>
-        <div {...props} ref={ref}>
-          {props.children}
+        <div {...restProps} ref={ref}>
+          {restProps.children}
         </div>
       </AccordionContextProvider>
     );
@@ -48,9 +51,15 @@ export const Accordion: React.ForwardRefExoticComponent<
 Accordion.propTypes = {
   open: propTypesOpen,
   icon: propTypesIcon,
+  disabled: propTypesDisabled,
 };
 
 Accordion.displayName = "ReUI.Accordion";
 
-export * from "./AccordionContext";
-export * from "./AccordionBody";
+export type { AccordionHeaderProps, AccordionBodyProps, AccordionContextType };
+export { AccordionHeader, AccordionBody };
+
+export default Object.assign(Accordion, {
+  Header: AccordionHeader,
+  Body: AccordionBody,
+});
