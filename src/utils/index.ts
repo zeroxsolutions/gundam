@@ -1,1 +1,1 @@
-export * from "@/components";
+"use strict";
