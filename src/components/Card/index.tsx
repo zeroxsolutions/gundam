@@ -1,1 +1,3 @@
-export interface CardProps extends React.ComponentProps<"div"> {}
+import { ComponentProps } from "react";
+
+export interface CardProps extends ComponentProps<"div"> {}

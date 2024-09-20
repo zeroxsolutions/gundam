@@ -1,1 +1,3 @@
-export interface FormProps extends React.ComponentProps<"div"> {}
+import { ComponentProps } from "react";
+
+export interface FormProps extends ComponentProps<"div"> {}

@@ -1,1 +1,3 @@
-export interface DrawerProps extends React.ComponentProps<"div"> {}
+import { ComponentProps } from "react";
+
+export interface DrawerProps extends ComponentProps<"div"> {}

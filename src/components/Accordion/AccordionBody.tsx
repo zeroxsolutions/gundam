@@ -1,21 +1,25 @@
-import React from "react";
+import React, {
+  ComponentProps,
+  ForwardedRef,
+  forwardRef,
+  ForwardRefExoticComponent,
+  PropsWithoutRef,
+  ReactNode,
+  RefAttributes,
+} from "react";
 
-export interface AccordionBodyProps extends React.ComponentProps<"div"> {}
+export interface AccordionBodyProps extends ComponentProps<"div"> {}
 
-export const AccordionBody: React.ForwardRefExoticComponent<
-  React.PropsWithoutRef<AccordionBodyProps> &
-    React.RefAttributes<HTMLDivElement>
-> = React.forwardRef<HTMLDivElement, AccordionBodyProps>(
-  (
-    props: AccordionBodyProps,
-    ref: React.ForwardedRef<HTMLDivElement>
-  ): React.ReactNode => {
+export const AccordionBody: ForwardRefExoticComponent<
+  PropsWithoutRef<AccordionBodyProps> & RefAttributes<HTMLDivElement>
+> = forwardRef<HTMLDivElement, AccordionBodyProps>(
+  (props: AccordionBodyProps, ref: ForwardedRef<HTMLDivElement>): ReactNode => {
     return (
       <div {...props} ref={ref}>
         {props.children}
       </div>
     );
-  }
+  },
 );
 
 AccordionBody.displayName = "ReUI.AccordionBody";

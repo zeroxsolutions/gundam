@@ -1,14 +1,18 @@
-# ide
+# IDE
 .vscode/
 .idea/
 
-# node
+# NodeJS
 node_modules/
 
 # misc
 .DS_Store
 
-# out
+# Out
 dist/
 
+# Rollup
+.rollup.cache
+
+# Storybook
 *storybook.log

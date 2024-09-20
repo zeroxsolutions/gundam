@@ -1,23 +1,30 @@
-import React from "react";
+import React, {
+  ComponentProps,
+  ForwardedRef,
+  forwardRef,
+  ForwardRefExoticComponent,
+  PropsWithoutRef,
+  ReactNode,
+  RefAttributes,
+} from "react";
 
-export interface AccordionHeaderProps extends React.ComponentProps<"div"> {
-  children: React.ReactNode;
+export interface AccordionHeaderProps extends ComponentProps<"div"> {
+  children: ReactNode;
 }
 
-export const AccordionHeader: React.ForwardRefExoticComponent<
-  React.PropsWithoutRef<AccordionHeaderProps> &
-    React.RefAttributes<HTMLDivElement>
-> = React.forwardRef<HTMLDivElement, AccordionHeaderProps>(
+export const AccordionHeader: ForwardRefExoticComponent<
+  PropsWithoutRef<AccordionHeaderProps> & RefAttributes<HTMLDivElement>
+> = forwardRef<HTMLDivElement, AccordionHeaderProps>(
   (
     props: AccordionHeaderProps,
-    ref: React.ForwardedRef<HTMLDivElement>
-  ): React.ReactNode => {
+    ref: ForwardedRef<HTMLDivElement>,
+  ): ReactNode => {
     return (
       <div {...props} ref={ref}>
         {props.children}
       </div>
     );
-  }
+  },
 );
 
 AccordionHeader.displayName = "ReUI.AccordionHeader";

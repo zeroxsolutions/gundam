@@ -1,1 +1,3 @@
-export interface ButtonGroupProps extends React.ComponentProps<"div"> {}
+import { ComponentProps } from "react";
+
+export interface ButtonGroupProps extends ComponentProps<"div"> {}

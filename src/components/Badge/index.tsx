@@ -1,1 +1,3 @@
-export interface BadgeProps extends React.ComponentProps<"div"> {}
+import { ComponentProps } from "react";
+
+export interface BadgeProps extends ComponentProps<"div"> {}

@@ -7,14 +7,14 @@ export const DatePicker: React.ForwardRefExoticComponent<
 > = React.forwardRef<HTMLDivElement, DatePickerProps>(
   (
     props: DatePickerProps,
-    ref: React.ForwardedRef<HTMLDivElement>
+    ref: React.ForwardedRef<HTMLDivElement>,
   ): React.ReactNode => {
     return (
       <div {...props} ref={ref}>
         {props.children}
       </div>
     );
-  }
+  },
 );
 
 DatePicker.displayName = "ReUI.DatePicker";

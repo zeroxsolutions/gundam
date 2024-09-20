@@ -1,21 +1,28 @@
-import React from "react";
+import React, {
+  ComponentProps,
+  ForwardedRef,
+  forwardRef,
+  ForwardRefExoticComponent,
+  PropsWithoutRef,
+  ReactNode,
+  RefAttributes,
+  useImperativeHandle,
+  useRef,
+} from "react";
 
-export interface ViewPagerProps extends React.ComponentProps<"div"> {}
+export interface ViewPagerProps extends ComponentProps<"div"> {}
 
 export interface ViewPagerRef extends HTMLDivElement {
   next: () => void;
 }
 
-export const ViewPager: React.ForwardRefExoticComponent<
-  React.PropsWithoutRef<ViewPagerProps> & React.RefAttributes<ViewPagerRef>
-> = React.forwardRef<ViewPagerRef, ViewPagerProps>(
-  (
-    props: ViewPagerProps,
-    ref: React.ForwardedRef<ViewPagerRef>
-  ): React.ReactNode => {
-    const divRef = React.useRef<HTMLDivElement>(null);
+export const ViewPager: ForwardRefExoticComponent<
+  PropsWithoutRef<ViewPagerProps> & RefAttributes<ViewPagerRef>
+> = forwardRef<ViewPagerRef, ViewPagerProps>(
+  (props: ViewPagerProps, ref: ForwardedRef<ViewPagerRef>): ReactNode => {
+    const divRef = useRef<HTMLDivElement>(null);
 
-    React.useImperativeHandle(ref, () => {
+    useImperativeHandle(ref, () => {
       return {
         ...(divRef.current as HTMLDivElement),
         next() {},
@@ -27,6 +34,6 @@ export const ViewPager: React.ForwardRefExoticComponent<
         {props.children}
       </div>
     );
-  }
+  },
 );
 ViewPager.displayName = "HE.ViewPager";

@@ -1,17 +1,24 @@
-import React from "react";
+import React, {
+  ComponentProps,
+  ForwardedRef,
+  forwardRef,
+  ForwardRefExoticComponent,
+  PropsWithoutRef,
+  ReactNode,
+  RefAttributes,
+} from "react";
 
-export interface InputDatePickerProps extends React.ComponentProps<"input"> {}
+export interface InputDatePickerProps extends ComponentProps<"input"> {}
 
-export const InputDatePicker: React.ForwardRefExoticComponent<
-  React.PropsWithoutRef<InputDatePickerProps> &
-    React.RefAttributes<HTMLInputElement>
-> = React.forwardRef<HTMLInputElement, InputDatePickerProps>(
+export const InputDatePicker: ForwardRefExoticComponent<
+  PropsWithoutRef<InputDatePickerProps> & RefAttributes<HTMLInputElement>
+> = forwardRef<HTMLInputElement, InputDatePickerProps>(
   (
     props: InputDatePickerProps,
-    ref: React.ForwardedRef<HTMLInputElement>
-  ): React.ReactNode => {
+    ref: ForwardedRef<HTMLInputElement>,
+  ): ReactNode => {
     return <input {...props} type="text" ref={ref} />;
-  }
+  },
 );
 
 InputDatePicker.displayName = "HE.InputDatePicker";

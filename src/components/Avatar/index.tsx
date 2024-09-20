@@ -1,1 +1,3 @@
-export interface AvatarProps extends React.ComponentProps<"div"> {}
+import { ComponentProps } from "react";
+
+export interface AvatarProps extends ComponentProps<"div"> {}

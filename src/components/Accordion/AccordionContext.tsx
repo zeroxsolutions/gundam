@@ -3,7 +3,13 @@ import type {
   typeIcon,
   typeOpen,
 } from "@/types/components/accordion";
-import React from "react";
+import React, {
+  Context,
+  createContext,
+  FC,
+  ReactNode,
+  useContext,
+} from "react";
 
 export interface AccordionContextType {
   open?: typeOpen;
@@ -11,28 +17,27 @@ export interface AccordionContextType {
   disabled?: typeDisabled;
 }
 
-export const AccordionContext =
-  React.createContext<AccordionContextType | null>(null);
+export const AccordionContext: Context<AccordionContextType | null> =
+  createContext<AccordionContextType | null>(null);
 AccordionContext.displayName = "ReUI.AccordionContext";
 
 export type AccordionContextProviderProps = {
   value: AccordionContextType | null;
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export function useAccordion(): AccordionContextType {
-  const context = React.useContext<AccordionContextType | null>(
-    AccordionContext
-  );
+  const context = useContext<AccordionContextType | null>(AccordionContext);
   if (!context) {
     throw new Error("useAccordion() error");
   }
   return context;
 }
 
-export const AccordionContextProvider: React.FC<
-  AccordionContextProviderProps
-> = ({ value, children }: AccordionContextProviderProps): React.ReactNode => {
+export const AccordionContextProvider: FC<AccordionContextProviderProps> = ({
+  value,
+  children,
+}: AccordionContextProviderProps): ReactNode => {
   return (
     <AccordionContext.Provider value={value}>
       {children}

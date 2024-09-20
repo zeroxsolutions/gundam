@@ -1,1 +1,3 @@
-export interface BreadcrumbsProps extends React.ComponentProps<"div"> {}
+import { ComponentProps } from "react";
+
+export interface BreadcrumbsProps extends ComponentProps<"div"> {}

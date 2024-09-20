@@ -6,7 +6,16 @@ import {
   type typeIcon,
   type typeOpen,
 } from "@/types/components/accordion";
-import React from "react";
+import React, {
+  ComponentProps,
+  ForwardedRef,
+  forwardRef,
+  ForwardRefExoticComponent,
+  PropsWithoutRef,
+  ReactNode,
+  RefAttributes,
+  useMemo,
+} from "react";
 import {
   AccordionContextProvider,
   AccordionContextType,
@@ -15,26 +24,26 @@ import { defaultProps } from "@/default/components/accordion";
 import { AccordionBody, AccordionBodyProps } from "./AccordionBody";
 import { AccordionHeader, AccordionHeaderProps } from "./AccordionHeader";
 
-export interface AccordionProps extends React.ComponentProps<"div"> {
+export interface AccordionProps extends ComponentProps<"div"> {
   open?: typeOpen;
   icon?: typeIcon;
   disabled?: typeDisabled;
 }
 
-export const Accordion: React.ForwardRefExoticComponent<
-  React.PropsWithoutRef<AccordionProps> & React.RefAttributes<HTMLDivElement>
-> = React.forwardRef<HTMLDivElement, AccordionProps>(
+export const Accordion: ForwardRefExoticComponent<
+  PropsWithoutRef<AccordionProps> & RefAttributes<HTMLDivElement>
+> = forwardRef<HTMLDivElement, AccordionProps>(
   (
     { open, icon, disabled, ...restProps }: AccordionProps,
-    ref: React.ForwardedRef<HTMLDivElement>
-  ): React.ReactNode => {
+    ref: ForwardedRef<HTMLDivElement>,
+  ): ReactNode => {
     // assign
     open = open ?? defaultProps.open;
     icon = icon ?? defaultProps.icon;
     disabled = disabled ?? defaultProps.disabled;
 
     // context value
-    const contextValue = React.useMemo<AccordionContextType>(() => {
+    const contextValue = useMemo<AccordionContextType>(() => {
       return { open, icon, disabled };
     }, [open, icon, disabled]);
 
@@ -45,7 +54,7 @@ export const Accordion: React.ForwardRefExoticComponent<
         </div>
       </AccordionContextProvider>
     );
-  }
+  },
 );
 
 Accordion.propTypes = {
