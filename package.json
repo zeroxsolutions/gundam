@@ -17,8 +17,12 @@
     "vite": "^5.4.7"
   },
   "files": [
-    "dist",
-    "src"
+    ".storybook",
+    "src",
+    "package-json.json",
+    "rollup.config.mjs",
+    "tsconfig.json",
+    "vite.config.mts"
   ],
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
