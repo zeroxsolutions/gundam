@@ -43,7 +43,7 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build": "rollup -c",
+    "build": "rollup -c --bundleConfigAsCjs",
     "format": "prettier -w ./**/*.{js,jsx,ts,tsx,json}",
     "postinstall": "npm run build"
   }

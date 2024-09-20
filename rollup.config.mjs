@@ -20,15 +20,16 @@ export default {
     },
   ],
   plugins: [
-    alias({
-      entries: [{ find: "@", replacement: "./src" }],
-    }),
     resolve(), // Resolve node_modules
     commonjs(), // Convert CommonJS to ES6 modules
+    alias({
+      entries: [{ find: "@", replacement: path.resolve(__dirname, "./src") }],
+    }),
     typescript({
       tsconfig: "./tsconfig.json",
       outputToFilesystem: true,
     }), // Compile TypeScript
+
     babel({
       extensions: [".ts", ".tsx"],
       babelHelpers: "bundled",
