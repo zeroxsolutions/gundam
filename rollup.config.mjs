@@ -29,6 +29,7 @@ export default {
     commonjs(), // Convert CommonJS to ES6 modules
     typescript({
       tsconfig: "./tsconfig.json",
+      outputToFilesystem: true,
     }), // Compile TypeScript
     babel({
       extensions: [".ts", ".tsx"],
