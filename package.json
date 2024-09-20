@@ -2,6 +2,8 @@
   "name": "reui",
   "version": "1.0.0",
   "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/zeroxsolutions/reui.git"
@@ -41,6 +43,7 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "postinstall": "npm run build"
   }
 }
