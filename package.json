@@ -45,6 +45,6 @@
     "build-storybook": "storybook build",
     "build": "rollup -c",
     "format": "prettier -w ./**/*.{js,jsx,ts,tsx,json}",
-    "postinstall": "npm run install"
+    "postinstall": "npm run build"
   }
 }
