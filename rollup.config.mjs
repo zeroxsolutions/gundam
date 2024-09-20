@@ -5,8 +5,6 @@ import { babel } from "@rollup/plugin-babel";
 import alias from "@rollup/plugin-alias";
 import path from "path";
 
-const __dirname = path.resolve();
-
 export default {
   input: "src/index.tsx", // Entry point
   output: [
