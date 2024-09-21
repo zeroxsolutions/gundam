@@ -1,9 +1,7 @@
-import typescript from "@rollup/plugin-typescript";
-import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
-import { babel } from "@rollup/plugin-babel";
-import alias from "@rollup/plugin-alias";
-import path from "path";
+import typescript from "@rollup/plugin-typescript"
+import resolve from "@rollup/plugin-node-resolve"
+import commonjs from "@rollup/plugin-commonjs"
+import { babel } from "@rollup/plugin-babel"
 
 export default {
   input: "src/index.tsx", // Entry point
@@ -22,14 +20,10 @@ export default {
   plugins: [
     resolve(), // Resolve node_modules
     commonjs(), // Convert CommonJS to ES6 modules
-    alias({
-      entries: [{ find: "@", replacement: path.resolve(__dirname, "./src") }],
-    }),
     typescript({
       tsconfig: "./tsconfig.json",
       outputToFilesystem: true,
     }), // Compile TypeScript
-
     babel({
       extensions: [".ts", ".tsx"],
       babelHelpers: "bundled",
@@ -37,4 +31,4 @@ export default {
     }),
   ],
   external: ["react", "react-dom"], // Treat peer dependencies as external
-};
+}

@@ -1,10 +1,10 @@
-import { InputDatePicker } from "@/components";
-import type { Meta, StoryObj } from "@storybook/react";
+import { InputDatePicker } from "../../components"
+import type { Meta, StoryObj } from "@storybook/react"
 
 const meta: Meta<typeof InputDatePicker> = {
   component: InputDatePicker,
-};
+}
 
-export default meta;
+export default meta
 
-type Story = StoryObj<typeof InputDatePicker>;
+type Story = StoryObj<typeof InputDatePicker>

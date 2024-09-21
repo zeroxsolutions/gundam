@@ -2,13 +2,16 @@
   "name": "reui",
   "version": "1.0.0",
   "license": "MIT",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/types/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/types/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/zeroxsolutions/reui.git"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "prettier": "^3.3.3",
     "prop-types": "^15.8.1",
@@ -43,7 +46,7 @@
   "scripts": {
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build": "rollup -c --bundleConfigAsCjs",
+    "build": "rollup -c",
     "format": "prettier -w ./**/*.{js,jsx,ts,tsx,json}",
     "postinstall": "npm run build"
   }
