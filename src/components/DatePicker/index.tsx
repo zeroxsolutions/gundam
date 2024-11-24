@@ -17,4 +17,4 @@ export const DatePicker: React.ForwardRefExoticComponent<
   },
 );
 
-DatePicker.displayName = "ReUI.DatePicker";
+DatePicker.displayName = "DatePicker";

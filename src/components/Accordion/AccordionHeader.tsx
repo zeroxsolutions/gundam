@@ -27,4 +27,4 @@ export const AccordionHeader: ForwardRefExoticComponent<
   },
 );
 
-AccordionHeader.displayName = "ReUI.AccordionHeader";
+AccordionHeader.displayName = "AccordionHeader";

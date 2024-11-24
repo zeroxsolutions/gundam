@@ -1,4 +1,4 @@
-import { ViewPager } from "../../components"
+import { ViewPager } from "../components"
 import type { Meta, StoryObj } from "@storybook/react"
 
 const meta: Meta<typeof ViewPager> = {
@@ -8,3 +8,7 @@ const meta: Meta<typeof ViewPager> = {
 export default meta
 
 type Story = StoryObj<typeof ViewPager>
+
+export const Default: Story = {
+  args: {},
+}

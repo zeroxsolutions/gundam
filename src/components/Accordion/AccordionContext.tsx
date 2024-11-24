@@ -8,7 +8,7 @@ export interface AccordionContextType {
 }
 
 export const AccordionContext: Context<AccordionContextType | null> = createContext<AccordionContextType | null>(null)
-AccordionContext.displayName = "ReUI.AccordionContext"
+AccordionContext.displayName = "AccordionContext"
 
 export type AccordionContextProviderProps = {
   value: AccordionContextType | null
@@ -30,4 +30,4 @@ export const AccordionContextProvider: FC<AccordionContextProviderProps> = ({
   return <AccordionContext.Provider value={value}>{children}</AccordionContext.Provider>
 }
 
-AccordionContextProvider.displayName = "ReUI.AccordionContextProvider"
+AccordionContextProvider.displayName = "AccordionContextProvider"

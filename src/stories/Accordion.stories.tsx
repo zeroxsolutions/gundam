@@ -1,4 +1,4 @@
-import { Accordion } from "../../components"
+import { Accordion } from "../components"
 import type { Meta, StoryObj } from "@storybook/react"
 
 const meta: Meta<typeof Accordion> = {
@@ -8,3 +8,7 @@ const meta: Meta<typeof Accordion> = {
 export default meta
 
 type Story = StoryObj<typeof Accordion>
+
+export const Default: Story = {
+  args: {},
+}

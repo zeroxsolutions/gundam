@@ -21,4 +21,4 @@ export const InputDatePicker: ForwardRefExoticComponent<
   },
 );
 
-InputDatePicker.displayName = "HE.InputDatePicker";
+InputDatePicker.displayName = "InputDatePicker";

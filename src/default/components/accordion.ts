@@ -1,4 +1,8 @@
-import { typeDisabled, typeIcon, typeOpen } from "../../../types/components/accordion"
+import {
+  typeDisabled,
+  typeIcon,
+  typeOpen,
+} from "../../types/components/accordion"
 
 export const defaultProps: {
   open?: typeOpen

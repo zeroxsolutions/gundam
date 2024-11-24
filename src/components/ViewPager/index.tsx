@@ -36,4 +36,4 @@ export const ViewPager: ForwardRefExoticComponent<
     );
   },
 );
-ViewPager.displayName = "HE.ViewPager";
+ViewPager.displayName = "ViewPager";

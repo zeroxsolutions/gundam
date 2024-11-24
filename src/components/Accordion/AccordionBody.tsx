@@ -22,4 +22,4 @@ export const AccordionBody: ForwardRefExoticComponent<
   },
 );
 
-AccordionBody.displayName = "ReUI.AccordionBody";
+AccordionBody.displayName = "AccordionBody";

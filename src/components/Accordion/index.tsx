@@ -56,7 +56,7 @@ Accordion.propTypes = {
   disabled: propTypesDisabled,
 }
 
-Accordion.displayName = "ReUI.Accordion"
+Accordion.displayName = "Accordion"
 
 export type { AccordionHeaderProps, AccordionBodyProps, AccordionContextType }
 export { AccordionHeader, AccordionBody }

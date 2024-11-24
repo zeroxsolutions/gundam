@@ -8,3 +8,7 @@ const meta: Meta<typeof InputDatePicker> = {
 export default meta
 
 type Story = StoryObj<typeof InputDatePicker>
+
+export const Default: Story = {
+  args: {},
+}
