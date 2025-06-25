@@ -1,4 +1,10 @@
-import { typeDisabled, typeIcon, typeIsChild, typeSize, typeVariant, } from "../../types/components/button"
+import {
+  typeDisabled,
+  typeIcon,
+  typeIsChild,
+  typeSize,
+  typeVariant,
+} from "../../types/components/button"
 
 export const defaultProps: {
   variant?: typeVariant

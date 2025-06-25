@@ -1,4 +1,8 @@
-import type { typeDisabled, typeIcon, typeOpen } from "../../types/components/accordion"
+import type {
+  typeDisabled,
+  typeIcon,
+  typeOpen,
+} from "../../types/components/accordion"
 import React, { Context, createContext, FC, ReactNode, useContext } from "react"
 
 export interface AccordionContextType {
@@ -7,7 +11,8 @@ export interface AccordionContextType {
   disabled?: typeDisabled
 }
 
-export const AccordionContext: Context<AccordionContextType | null> = createContext<AccordionContextType | null>(null)
+export const AccordionContext: Context<AccordionContextType | null> =
+  createContext<AccordionContextType | null>(null)
 AccordionContext.displayName = "AccordionContext"
 
 export type AccordionContextProviderProps = {
@@ -27,7 +32,11 @@ export const AccordionContextProvider: FC<AccordionContextProviderProps> = ({
   value,
   children,
 }: AccordionContextProviderProps): ReactNode => {
-  return <AccordionContext.Provider value={value}>{children}</AccordionContext.Provider>
+  return (
+    <AccordionContext.Provider value={value}>
+      {children}
+    </AccordionContext.Provider>
+  )
 }
 
 AccordionContextProvider.displayName = "AccordionContextProvider"

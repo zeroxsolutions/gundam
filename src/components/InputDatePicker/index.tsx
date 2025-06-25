@@ -6,7 +6,7 @@ import React, {
   PropsWithoutRef,
   ReactNode,
   RefAttributes,
-} from "react";
+} from "react"
 
 export interface InputDatePickerProps extends ComponentProps<"input"> {}
 
@@ -15,10 +15,10 @@ export const InputDatePicker: ForwardRefExoticComponent<
 > = forwardRef<HTMLInputElement, InputDatePickerProps>(
   (
     props: InputDatePickerProps,
-    ref: ForwardedRef<HTMLInputElement>,
+    ref: ForwardedRef<HTMLInputElement>
   ): ReactNode => {
-    return <input {...props} type="text" ref={ref} />;
-  },
-);
+    return <input {...props} type="text" ref={ref} />
+  }
+)
 
-InputDatePicker.displayName = "InputDatePicker";
+InputDatePicker.displayName = "InputDatePicker"

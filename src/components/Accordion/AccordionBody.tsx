@@ -6,7 +6,7 @@ import React, {
   PropsWithoutRef,
   ReactNode,
   RefAttributes,
-} from "react";
+} from "react"
 
 export interface AccordionBodyProps extends ComponentProps<"div"> {}
 
@@ -18,8 +18,8 @@ export const AccordionBody: ForwardRefExoticComponent<
       <div {...props} ref={ref}>
         {props.children}
       </div>
-    );
-  },
-);
+    )
+  }
+)
 
-AccordionBody.displayName = "AccordionBody";
+AccordionBody.displayName = "AccordionBody"

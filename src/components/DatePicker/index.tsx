@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 export interface DatePickerProps extends React.ComponentProps<"div"> {}
 
@@ -7,14 +7,14 @@ export const DatePicker: React.ForwardRefExoticComponent<
 > = React.forwardRef<HTMLDivElement, DatePickerProps>(
   (
     props: DatePickerProps,
-    ref: React.ForwardedRef<HTMLDivElement>,
+    ref: React.ForwardedRef<HTMLDivElement>
   ): React.ReactNode => {
     return (
       <div {...props} ref={ref}>
         {props.children}
       </div>
-    );
-  },
-);
+    )
+  }
+)
 
-DatePicker.displayName = "DatePicker";
+DatePicker.displayName = "DatePicker"

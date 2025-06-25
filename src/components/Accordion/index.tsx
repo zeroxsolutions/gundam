@@ -16,7 +16,10 @@ import React, {
   RefAttributes,
   useMemo,
 } from "react"
-import { AccordionContextProvider, AccordionContextType } from "./AccordionContext"
+import {
+  AccordionContextProvider,
+  AccordionContextType,
+} from "./AccordionContext"
 import { defaultProps } from "../../default/components/accordion"
 import { AccordionBody, AccordionBodyProps } from "./AccordionBody"
 import { AccordionHeader, AccordionHeaderProps } from "./AccordionHeader"
@@ -27,28 +30,32 @@ export interface AccordionProps extends ComponentProps<"div"> {
   disabled?: typeDisabled
 }
 
-export const Accordion: ForwardRefExoticComponent<PropsWithoutRef<AccordionProps> & RefAttributes<HTMLDivElement>> =
-  forwardRef<HTMLDivElement, AccordionProps>(
-    ({ open, icon, disabled, ...restProps }: AccordionProps, ref: ForwardedRef<HTMLDivElement>): ReactNode => {
-      // assign
-      open = open ?? defaultProps.open
-      icon = icon ?? defaultProps.icon
-      disabled = disabled ?? defaultProps.disabled
+export const Accordion: ForwardRefExoticComponent<
+  PropsWithoutRef<AccordionProps> & RefAttributes<HTMLDivElement>
+> = forwardRef<HTMLDivElement, AccordionProps>(
+  (
+    { open, icon, disabled, ...restProps }: AccordionProps,
+    ref: ForwardedRef<HTMLDivElement>
+  ): ReactNode => {
+    // assign
+    open = open ?? defaultProps.open
+    icon = icon ?? defaultProps.icon
+    disabled = disabled ?? defaultProps.disabled
 
-      // context value
-      const contextValue = useMemo<AccordionContextType>(() => {
-        return { open, icon, disabled }
-      }, [open, icon, disabled])
+    // context value
+    const contextValue = useMemo<AccordionContextType>(() => {
+      return { open, icon, disabled }
+    }, [open, icon, disabled])
 
-      return (
-        <AccordionContextProvider value={contextValue}>
-          <div {...restProps} ref={ref}>
-            {restProps.children}
-          </div>
-        </AccordionContextProvider>
-      )
-    }
-  )
+    return (
+      <AccordionContextProvider value={contextValue}>
+        <div {...restProps} ref={ref}>
+          {restProps.children}
+        </div>
+      </AccordionContextProvider>
+    )
+  }
+)
 
 Accordion.propTypes = {
   open: propTypesOpen,
